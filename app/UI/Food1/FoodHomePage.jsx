@@ -59,7 +59,7 @@ const FoodHomePage = () => {
           style={{
             fontFamily: "Poppins-ExtraBold",
             fontSize: 30,
-            marginTop: -20,
+            marginTop: -10,
           }}
         >
           Food

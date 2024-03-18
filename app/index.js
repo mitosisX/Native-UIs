@@ -4,9 +4,13 @@ import GadgetsMainScreen from "./UI/Ecommerce/Gadgets/GadgetsMainScreen";
 import CookingHomepage from "./UI/Cooking/CookingHomepage";
 import { useFonts } from "expo-font";
 import FoodHomePage from "./UI/Food1/FoodHomePage";
+import { useCallback } from "react";
+import { SplashScreen } from "expo-router";
+
+// SplashScreen.preventAutoHideAsync();
 
 const Home = () => {
-  const [fontsLoaded] = useFonts({
+  const [fontsLoaded, fontError] = useFonts({
     "Poppins-Black": require("../assets/fonts/Poppins-Black.ttf"),
     "Poppins-Bold": require("../assets/fonts/Poppins-Bold.ttf"),
     "Poppins-ExtraBold": require("../assets/fonts/Poppins-ExtraBold.ttf"),
@@ -17,6 +21,12 @@ const Home = () => {
     "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
     "Poppins-Thin": require("../assets/fonts/Poppins-Thin.ttf"),
   });
+
+  // const onLayoutRootView = useCallback(async () => {
+  //   if (fontsLoaded || fontError) await SplashScreen.hideAsync();
+  // }, [fontsLoaded, fontError]);
+
+  // if (!fontsLoaded && !fontError) return null;
 
   return (
     <ScrollView>
